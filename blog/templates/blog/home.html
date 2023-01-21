@@ -1,81 +1,158 @@
 <!doctype html>
-<html lang="en">
+{% load static %}
+<html lang="pt-br">
 <head>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <meta charset="UTF-8">
     <title>Página inicial</title>
 </head>
 <body>
-<header class="bg-dark my-2">
 
-    <nav class="navbar navbar-expand-lg bg-light">
+<div class="container-fluid bg-dark mb-2">
+    <div class="row justify-content-center">
+        <div class="col-8">
+            <header class="bg-dark my-2">
+                <nav class="navbar navbar-expand-lg navbar-dark">
 
-        <div class="container-fluid">
+                    <div class="container-fluid">
 
-            <a class="navbar-brand" href="#">Navbar</a>
+                        <a class="navbar-brand" href="#">Blog</a>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                                aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                           aria-expanded="false">
-                            Dropdown
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled">Disabled</a>
-                    </li>
-                </ul>
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
-            </div>
+                                <li class="nav-item">
+                                    <a class="nav-link" aria-current="page" href="#">Blog</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Cursos</a>
+                                </li>
 
-       </div>
-    </nav>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Contato</a>
+                                </li>
 
 
-</header>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Login</a>
+                                </li>
+                            </ul>
+
+                            <form class="d-flex" role="search">
+                                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                                <button class="btn btn-outline-success" type="submit">Search</button>
+                            </form>
+
+                        </div>
+
+                    </div>
+                </nav>
+            </header>
+        </div>
+    </div>
+</div>
 
 <main class="bg-ligth">
     <div class="container-fluid">
         <div class="row justify-content-center">
             <div class="col-8">
-                CONTEUDO
+                <div class="row">
+                    <div class="col-8 d-flex">
+                        <div class="card vh-75 vw-100">
+
+                            <img src="{% static 'blog/django.jpg'%}" class="card-img-top" alt="imagem card">
+                            <div class="card-body">
+                                <h5 class="card-title">Django</h5>
+
+                                <p class="card-text">
+                                    <smalL class="text-muted">Publicado em 21/01/2023</smalL>
+                                </p>
+                                <p class="card-text">
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus aperiam esse
+                                    facere fugit molestias odio, repudiandae rerum! Aliquid animi dolorum esse fugit
+                                    inventore minima, modi mollitia omnis quis quos sapiente.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-4 d-flex">
+                        <div class="card border-0 vh-75 vw-100">
+                            <img src="{% static 'blog/codigodj.png' %}" class="card-img-top" alt="texto-questao">
+                            <div class="card-body">
+
+                                <div class="form-check no-border">
+                                    <div class="card border-0">
+
+                                        <ul class="list-group list-group-flush">
+                                            {% for i in 'ABCDE' %}
+                                            <div class="list-group-list">
+                                                <input class="form-check-input" type="radio" name="exampleRadios"
+                                                       id="exampleRadios2" value="option2">
+                                                <label class="form-check-label border-0" for="exampleRadios2">
+                                                    Alternativa {{ i }}
+                                                </label>
+                                            </div>
+                                            {% endfor %}
+
+
+                                        </ul>
+                                    </div>
+                                </div>
+                                <a href="#" class="btn btn-success my-2 d-grid">Responder</a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
             </div>
+
+
         </div>
+    </div>
     </div>
 
 </main>
 
-<footer class="bg-dark">
+<footer class="bg-dark text-white py-4 my-2">
     <div class="container-fluid">
-        <div class="row">
-            <div class="col">
-                FOOTER
+        <div class="row justify-content-center">
+            <div class="col-2 text-left">
+                <h5 class="text-uppercase fw-bold text-info">Quem somos?</h5>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam dolore eveniet provident quasi
+                    vel? Ab ad alias aliquam aperiam aspernatur assumenda consectetur, consequatur ducimus id nemo,
+                    numquam praesentium. Alias, quis?
+                </p>
+            </div>
+
+            <div class="col-4 text-left">
+                <h5 class="text-uppercase fw-bold text-info">Onde queremos chegar?</h5>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam dolore eveniet provident quasi
+                    vel? Ab ad alias aliquam aperiam aspernatur assumenda consectetur, consequatur ducimus id nemo,
+                    numquam praesentium. Alias, quis?
+                </p>
+            </div>
+            <div class="col-2">
+                <h5 class="text-uppercase fw-bold text-info">Siga-nos nas redes</h5>
+                <p>
+                    <i class="fa-brands fa-github"></i>
+                    <a href="https://github.com/sueliosantos" class="text-white" style="text-decoration:none">GitHub</a>
+                </p>
+                <p>
+                    <i class="fa-brands fa-instagram"></i>
+                    <a href="https://www.instagram.com/" class="text-white"
+                       style="text-decoration:none">sueliosantos</a>
+                </p>
             </div>
         </div>
     </div>
